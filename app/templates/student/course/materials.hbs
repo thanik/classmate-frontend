@@ -1,0 +1,29 @@
+<div class="row content">
+    <div class="col-xs-12 section-header">Class Materials</div>
+  {{#if model.materials}}
+    {{#each model.materials as |material|}}
+      <a href="{{material.filename}}">
+        <div class="col-xs-12 section-content">
+
+            <div class="post-avatar">
+                <span class="glyphicon glyphicon-download download-icon"></span>
+            </div>
+
+            <div class="post-content">
+              {{material.title}}<br/>
+                <p>{{material.description}}</p>
+                <p>uploaded by {{material.user.name}}<br/>
+                    <br/>
+                  last updated: {{material.updated_at}}</p>
+            </div>
+        </div>
+      </a>
+    {{/each}}
+  {{else}}
+      <div class="col-xs-12 section-content">
+          <div class="post-content">
+              No material
+          </div>
+      </div>
+  {{/if}}
+</div>

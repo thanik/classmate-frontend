@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="col-xs-12 col-md-8 col-md-offset-2 first-setup-container">
+    <div class="first-setup-heading">welcome to classmate</div>
+      {{#if firstPage}}
+          <div class="first-setup-subheading">First, we need to know who you are.<br/>Are you a student or a teacher?</div>
+          <div class="col-xs-6">
+          <button {{action "showPage" '1'}} class="first-setup-student-button"><img src="assets/images/student-logo.png">student</button>
+          </div>
+          <div class="col-xs-6">
+          <button {{action "showPage" '2'}} class="first-setup-teacher-button"><img src="assets/images/teacher-logo.png">teacher</button>
+          </div>
+
+      {{else if studentPage}}
+          <div class="first-setup-subheading">So, you're a student. Please tell us more about you.</div>
+      <form>
+          {{#if errors}}
+            <div class="alert alert-danger" role="alert">{{errors}}</div>
+          {{/if}}
+      <div class="form-group">
+          <label for="name">Name:</label>
+        {{input type="text" class="form-control" value=name name="name"}}
+      </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+          {{input type="text" class="form-control" value=email name="email"}}
+        </div>
+      <div class="form-group">
+          <label for="organization">University/College:</label>
+        {{text-typeahead url="https://classmateapp.xyz/api/v0/list_organization" selectiondata=organization_code }}
+        {{input type="hidden" value=organization_code name="organization_code"}}
+
+      </div>
+      <div class="form-group">
+          <label for="faculty_field">Faculty and field:</label>
+        {{input type="text" class="form-control" value=faculty_field  name="faculty_field" placeholder="eg. Computer Engineering, Faculty of Engineering"}}
+      </div>
+      <div class="form-group">
+          <label for="student_id">Student ID:</label>
+        {{input type="text" class="form-control" value=student_id  name="student_id"}}
+      </div>
+          <button id="submit_button" type="submit" class="btn btn-primary btn-block btn-lg" {{action "registerStudent"}}>OK</button>
+      </form>
+
+      {{else if teacherPage}}
+          <div class="first-setup-subheading">So, you're a teacher. Please tell us more about you.</div>
+          <form>
+            {{#if errors}}
+                <div class="alert alert-danger" role="alert">{{errors}}</div>
+            {{/if}}
+              <div class="form-group">
+                  <label for="name">Name:</label>
+                {{input type="text" class="form-control" value=name name="name"}}
+              </div>
+              <div class="form-group">
+                  <label for="email">Email:</label>
+                {{input type="text" class="form-control" value=email name="email"}}
+              </div>
+              <div class="form-group">
+                  <label for="organization">University/College:</label>
+                {{text-typeahead url="https://classmateapp.xyz/api/v0/list_organization" selectiondata=organization_code }}
+                {{input type="hidden" value=organization_code name="organization_code"}}
+
+              </div>
+              <div class="form-group">
+                  <label for="faculty_field">Faculty and field:</label>
+                {{input type="text" class="form-control" value=faculty_field  name="faculty_field" placeholder="eg. Computer Engineering, Faculty of Engineering"}}
+              </div>
+              <button id="submit_button" type="submit" class="btn btn-primary btn-block btn-lg" {{action "registerTeacher"}}>OK</button>
+          </form>
+      {{/if}}
+  </div>
+</div>

@@ -1,0 +1,12 @@
+{{#modal-dialog title='Join a course' ok='joinCourse' close='removeModal'}}
+    <form {{action 'ok' on='submit' target=view}}>
+        {{#if error}}
+            <div class="alert alert-danger" role="alert">{{error}}</div>
+        {{/if}}
+        <div class="form-group">
+            <label for="name">Course Join Code:</label>
+          {{input type="text" class="form-control" value=joinCode name="joincode"}}
+            You can ask course joining code from your instructor or your teacher.
+        </div>
+    </form>
+{{/modal-dialog}}

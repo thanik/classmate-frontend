@@ -1,0 +1,23 @@
+{{#if isStudent}}
+<div class="row subheader">
+    <div class="row">
+        <div class="col-xs-7 col-sm-8 subheading">
+            <span>{{subHeading}}</span>
+        </div>
+        <div class="col-xs-5 col-sm-4">
+          {{yield}}
+        </div>
+    </div>
+</div>
+{{else}}
+    <div class="row subheader teacher-text">
+        <div class="row">
+            <div class="col-xs-7 col-sm-8 subheading">
+                <span>{{subHeading}}</span>
+            </div>
+            <div class="col-xs-5 col-sm-4">
+              {{yield}}
+            </div>
+        </div>
+    </div>
+{{/if}}

@@ -1,0 +1,29 @@
+{{#if isStudent}}
+<div class="row header">
+    <div class="col-xs-10 col-md-11">
+        <div class="logo">
+          {{#link-to "student.courses"}}<span id="logo-class" >class</span><span id="logo-mate">mate</span>{{/link-to}}
+        </div>
+    </div>
+
+    <div class="col-xs-2 col-md-1">
+        <div class="user-avatar">
+          <img class="avatar" alt="avatar" src=""/>
+        </div>
+    </div>
+</div>
+{{else}}
+<div class="row header teacher-bg">
+    <div class="col-xs-10 col-md-11">
+        <div class="logo">
+          {{#link-to "teacher.courses"}}<span id="logo-class">class</span><span id="logo-mate">mate</span>{{/link-to}}
+        </div>
+    </div>
+
+    <div class="col-xs-2 col-md-1">
+        <!--div class="user-avatar">
+            <img class="avatar" alt="avatar" src=""/>
+        </div-->
+    </div>
+</div>
+{{/if}}

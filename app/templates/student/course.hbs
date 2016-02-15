@@ -1,0 +1,9 @@
+{{#app-subheader isStudent=isStudent subHeading=model.fullCourseName}}
+    {{#link-to 'student.courses'}}<button class="circle-button"><span class="glyphicon glyphicon-home"></span></button>{{/link-to}}
+
+{{/app-subheader}}
+
+{{#tab-bar isStudent=isStudent model=model}}
+{{/tab-bar}}
+
+{{outlet}}

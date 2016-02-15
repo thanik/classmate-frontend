@@ -20,5 +20,14 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  app.import('vendor/assets/images/student-logo.png',{
+    destDir: 'assets/images'
+  });
+  app.import('vendor/assets/images/teacher-logo.png',{
+    destDir: 'assets/images'
+  });
+  app.import('bower_components/typeahead.js/dist/typeahead.bundle.min.js');
+  app.import('bower_components/moment/min/moment.min.js');
+
   return app.toTree();
 };

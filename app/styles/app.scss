@@ -1,0 +1,545 @@
+@import "bootstrap";
+
+body
+{
+  background-color: #3c3c3c;
+  font-family: 'Montserrat', sans-serif;
+  color: #707070;
+
+}
+
+.logo
+{
+  font-family: 'Raleway';
+
+}
+
+.logo a
+{
+  color: #fff;
+}
+
+.logo a:hover
+{
+  text-decoration: none;
+}
+
+.logo a:focus
+{
+  text-decoration: none;
+}
+
+.splash-logo
+{
+  font-family: 'Raleway';
+  font-size: 3em;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  text-align: center;
+}
+
+.first-setup-container
+{
+  margin-top: 75px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.6);
+  box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.6);
+  padding-bottom: 20px;
+}
+
+.first-setup-heading
+{
+  margin-top: 25px;
+  font-family: 'Raleway';
+  font-size: 3em;
+  font-weight: 300;
+  text-align: center;
+}
+
+.first-setup-subheading
+{
+  margin-top: 15px;
+  margin-bottom: 30px;
+  font-size: 1.5em;
+  text-align: center;
+
+}
+
+.first-setup-student-button
+{
+  border: solid #2fa3f9 2px;
+  border-radius: 10px;
+  background: #FFFFFF;
+  color: #2fa3f9;
+  font-size: 1.5em;
+}
+
+.first-setup-student-button img
+{
+  width: 100%;
+  height: auto;
+}
+
+.first-setup-teacher-button
+{
+  border: solid #fd6c67 2px;
+  border-radius: 10px;
+  background: #FFFFFF;
+  color: #fd6c67;
+  font-size: 1.5em;
+}
+
+.first-setup-teacher-button img
+{
+  width: 100%;
+  height: auto;
+}
+
+.loading-text
+{
+  font-size: 0.5em;
+  color: #606060;
+  text-align: center;
+}
+
+.twitter-typeahead, .tt-hint, .tt-input, .tt-menu { width: 100%; }
+
+span.twitter-typeahead .tt-menu,
+span.twitter-typeahead .tt-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
+span.twitter-typeahead .tt-suggestion {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333333;
+  white-space: nowrap;
+}
+span.twitter-typeahead .tt-suggestion.tt-cursor,
+span.twitter-typeahead .tt-suggestion:hover,
+span.twitter-typeahead .tt-suggestion:focus {
+  color: #ffffff;
+  text-decoration: none;
+  outline: 0;
+  background-color: #337ab7;
+}
+.input-group.input-group-lg span.twitter-typeahead .form-control {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+.input-group.input-group-sm span.twitter-typeahead .form-control {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+span.twitter-typeahead {
+  width: 100%;
+}
+.input-group span.twitter-typeahead {
+  display: block !important;
+  height: 34px;
+}
+.input-group span.twitter-typeahead .tt-menu,
+.input-group span.twitter-typeahead .tt-dropdown-menu {
+  top: 32px !important;
+}
+.input-group span.twitter-typeahead:not(:first-child):not(:last-child) .form-control {
+  border-radius: 0;
+}
+.input-group span.twitter-typeahead:first-child .form-control {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group span.twitter-typeahead:last-child .form-control {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.input-group.input-group-sm span.twitter-typeahead {
+  height: 30px;
+}
+.input-group.input-group-sm span.twitter-typeahead .tt-menu,
+.input-group.input-group-sm span.twitter-typeahead .tt-dropdown-menu {
+  top: 30px !important;
+}
+.input-group.input-group-lg span.twitter-typeahead {
+  height: 46px;
+}
+.input-group.input-group-lg span.twitter-typeahead .tt-menu,
+.input-group.input-group-lg span.twitter-typeahead .tt-dropdown-menu {
+  top: 46px !important;
+}
+
+.app-container
+{
+
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+}
+
+.section-header
+{
+  margin-top: 25px;
+  font-family: 'Raleway';
+  font-size: 2em;
+
+}
+
+.section-content
+{
+  padding: 15px;
+  font-size: 1.3em;
+  font-weight: 400;
+  background-color: white;
+  border: solid #d8d8d8 2px;
+  border-radius: 7px;
+}
+
+.header
+{
+  color: white;
+  background-color: #55b9ff;
+  height: 100px;
+  padding-left: 25px;
+  padding-right: 25px;
+  line-height: 100px;
+}
+
+.subheader
+{
+  background-color: #fff;
+  padding-left: 35px;
+  padding-right: 35px;
+  color: #55b9ff;
+}
+
+.content
+{
+  background-color: #e4e4e4;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+#logo-class
+{
+  font-weight: 300;
+}
+
+#logo-mate
+{
+  font-family: 'Raleway';
+  font-weight: 600;
+
+}
+
+.logo
+{
+  font-size: 2.5em;
+  font-family: 'Raleway';
+}
+
+.footer
+{
+  background-color: #e4e4e4;
+  padding-top: 30px;
+  text-align: right;
+
+}
+
+.user-avatar
+{
+  margin-top: 5px;
+  width: 60px;
+  height: 60px;
+}
+
+.avatar
+{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  background: url('') no-repeat;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  float: left;
+  margin-top: 1em;
+  margin-right: 1em;
+  position: relative;
+}
+
+
+.subheading
+{
+  font-family: 'Raleway';
+  font-weight: 300;
+  font-size: 2em;
+  //color: #55b9ff;
+  line-height: 70px;
+}
+
+.list-category-header
+{
+  color: #a5a5a5;
+  font-size: 1.25em;
+  padding-top: 25px;
+}
+
+.course-item
+{
+  border-width: 1px;
+  border-color: rgb(216, 216, 216);
+  border-style: solid;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 8%;
+  min-height: 200px;
+  margin-bottom: 20px;
+}
+
+.course-item .course-name
+{
+  font-size: 1.75em;
+  color: #707070;
+}
+
+.course-name a:hover, a:focus
+{
+  color: #FFFFFF;
+}
+
+.circle-button
+{
+  margin-top: 10px;
+  margin-left: 6px;
+  width: 45px;
+  height: 45px;
+  padding: 3px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  background-color: #55b9ff;
+  align-content: center;
+  text-align: center;
+  color: white;
+  float: right;
+  font-size: 1.3em;
+  border: none;
+}
+
+.circle-button.sub
+{
+  margin-top: 20px;
+  background-color: #707070;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2em;
+}
+
+.tab
+{
+  text-align: center;
+  font-family: 'Raleway';
+  font-weight: 600;
+  font-size: 1.2em;
+
+}
+
+.tab-name
+{
+  width: 100%;
+  border-bottom: solid #d7d7d7;
+  border-bottom-width: 6px;
+  color: #707070;
+}
+
+.active .tab-name
+{
+  border-bottom-color: #55b9ff;
+  color: #707070;
+
+}
+
+.active .tab-name-teacher
+{
+  border-bottom-color: #ff6b6b;
+  color: #707070;
+}
+
+.tab-bar
+{
+  background-color: #FFFFFF;
+}
+
+.new-badge
+{
+  position: absolute;
+  right: 15px;
+  border-radius: 4px;
+  background-color: #ff6b6b;
+  color: white;
+  width: 70px;
+  text-align: center;
+}
+
+.post-content
+{
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.post-avatar
+{
+  position: absolute;
+  height: 60px;
+  width: 60px;
+}
+
+.teacher-bg
+{
+  background-color: #ff6b6b;
+}
+
+.teacher-text
+{
+  color: #ff6b6b;
+}
+
+.download-icon
+{
+  font-size: 3em;
+}
+
+.btn.btn-classmate
+{
+  color: #FFFFFF;
+  background-color: #707070;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.btn.btn-teacher
+{
+  color: #FFFFFF;
+  background-color: #ff6b6b;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.btn.btn-student
+{
+  color: #FFFFFF;
+  background-color: #55b9ff;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.quick-action
+{
+  text-align: center;
+}
+
+/* xs < 768 */
+@media screen and (max-width: 767px)
+{
+
+  .tab
+  {
+    font-size: 0.85em;
+    padding-left: 1px;
+    padding-right: 1px;
+  }
+
+  .logo
+  {
+    font-size: 1.5em;
+  }
+
+  .header
+  {
+    height: 50px;
+    line-height: 50px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .user-avatar
+  {
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+  }
+
+  .subheading
+  {
+    font-size: 1.5em;
+    color: #55b9ff;
+    line-height: 40px;
+  }
+
+  .circle-button
+  {
+    margin-top: 2px;
+    width: 30px;
+    height: 30px;
+    font-size: 1em;
+
+  }
+
+  .content
+  {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .subheader
+  {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .course-item
+  {
+    padding: 3%;
+    min-height: 100px;
+  }
+}

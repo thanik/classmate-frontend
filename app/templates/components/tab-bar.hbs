@@ -1,0 +1,54 @@
+{{#if isStudent}}
+<div class="row tab-bar">
+    {{#link-to "student.course.index" model}}
+    <div class="col-xs-3 tab">
+        <div class="tab-name">SUMMARY</div>
+    </div>
+    {{/link-to}}
+
+    {{#link-to "student.course.announcements" model}}
+    <div class="col-xs-3 tab">
+        <div class="tab-name">ANNOUNCEMENT</div>
+    </div>
+    {{/link-to}}
+
+{{#link-to "student.course.materials" model}}
+    <div class="col-xs-3 tab">
+        <div class="tab-name">MATERIAL</div>
+    </div>
+{{/link-to}}
+
+  {{#link-to "student.course.discussions" model}}
+    <div class="col-xs-3 tab">
+        <div class="tab-name">DISCUSSION</div>
+    </div>
+  {{/link-to}}
+
+</div>
+{{else}}
+<div class="row tab-bar">
+  {{#link-to "teacher.course.index" model}}
+      <div class="col-xs-3 tab">
+          <div class="tab-name tab-name-teacher">SUMMARY</div>
+      </div>
+  {{/link-to}}
+
+  {{#link-to "teacher.course.announcements" model}}
+      <div class="col-xs-3 tab">
+          <div class="tab-name tab-name-teacher">ANNOUNCEMENT</div>
+      </div>
+  {{/link-to}}
+
+  {{#link-to "teacher.course.materials" model}}
+      <div class="col-xs-3 tab">
+          <div class="tab-name tab-name-teacher">MATERIAL</div>
+      </div>
+  {{/link-to}}
+
+  {{#link-to "teacher.course.discussions" model}}
+      <div class="col-xs-3 tab">
+          <div class="tab-name tab-name-teacher">DISCUSSION</div>
+      </div>
+  {{/link-to}}
+</div>
+{{/if}}

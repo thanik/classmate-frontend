@@ -1,0 +1,26 @@
+<div class="row content">
+    {{#if model}}
+  <div class="row">
+    <div class="col-xs-12 list-category-header">ALL COURSES</div>
+  </div>
+
+  <div class="row">
+    {{#each model as |course|}}
+      {{#link-to "student.course" course}}
+        <div class="col-sm-4 col-md-3">
+            <div class="course-item">
+              <!--div class="new-badge">NEW</div-->
+              <span class="course-name">{{course.course_code}}<br/>{{course.name}}</span>
+            </div>
+        </div>
+      {{/link-to}}
+    {{/each}}
+  </div>
+    {{else}}
+        <div class="row">
+            <div class="col-xs-12 list-category-header">You have no course. Please join a course by clicking plus icon on the right side.</div>
+        </div>
+    {{/if}}
+
+  {{yield}}
+</div>

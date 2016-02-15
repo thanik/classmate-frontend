@@ -1,0 +1,20 @@
+{{#app-subheader isStudent=isStudent subHeading="COURSES"}}
+  {{#if isStudent}}
+      <button {{action 'showModal' 'joincourse-modal'}} class="circle-button"><span class="glyphicon glyphicon-plus"></span></button>
+      <!--button class="circle-button"><span class="glyphicon glyphicon-search"></span></--button>
+      <button class="circle-button"><span class="glyphicon glyphicon-sort"></span></button-->
+
+  {{else}}
+      <button class="circle-button teacher-bg"><span class="glyphicon glyphicon-pencil"></span></button>
+      <button class="circle-button teacher-bg"><span class="glyphicon glyphicon-home"></span></button>
+      <button class="circle-button teacher-bg"><span class="glyphicon glyphicon-home"></span></button>
+      <button class="circle-button teacher-bg"><span class="glyphicon glyphicon-home"></span></button>
+  {{/if}}
+{{/app-subheader}}
+
+
+{{#student-course-list isStudent=isStudent model=model}}
+
+{{/student-course-list}}
+
+{{outlet}}

@@ -1,0 +1,26 @@
+<div class="row content">
+
+    <div class="col-xs-12 section-header">Quick Actions</div>
+
+    {{#link-to "teacher.course.announcements"}}<div class="col-xs-6 section-content quick-action"><span class="glyphicon glyphicon-plus"></span> Add a new announcement</div>{{/link-to}}
+
+    {{#link-to "teacher.course.materials"}}<div class="col-xs-6 section-content quick-action"><span class="glyphicon glyphicon-share"></span> Upload a new material</div>{{/link-to}}
+
+    <div class="col-xs-12 section-header">Details</div>
+    <div class="col-xs-12 section-content">
+        Course joining code: {{model.join_code}}<br/>
+        Tell your student to join this course by using this code.
+    </div>
+
+    <div class="col-xs-12 section-header">Latest active thread in discussions</div>
+    <div class="col-xs-12 section-content">
+        <div class="post-content">
+          {{latest_discussionpost_title}}<br/>
+          {{#if latest_discussionpost_name}}
+            {{latest_discussionpost_time}}<br/>
+              by {{latest_discussionpost_name}}<br/>
+          {{/if}}
+        </div>
+    </div>
+
+</div>

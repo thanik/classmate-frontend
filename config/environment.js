@@ -5,6 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'classmate',
     environment: environment,
     baseURL: '/',
+    apiHost: 'https://classmateapp.xyz',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -16,15 +17,34 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+  };
+
+  ENV['ember-simple-auth'] = {
+    authenticationRoute: 'login',
+    routeAfterAuthentication: 'index',
+    authorizer: 'authorizer:token'
+  };
+  ENV['ember-simple-auth-token'] = {
+    serverTokenEndpoint: ENV.apiHost + '/api/v0/auth',
+    identificationField: 'facebook_id',
+    passwordField: 'facebook_token',
+    tokenPropertyName: 'token',
+    authorizationPrefix: 'Bearer ',
+    authorizationHeaderName: 'Authorization',
+    headers: {},
+    serverTokenRefreshEndpoint: ENV.apiHost + '/api/v0/refresh_token',
+    refreshAccessTokens: true,
+    timeFactor: 1000,
+    refreshLeeway: 300 // Refresh the token 5 minutes (300s) before it expires.
   };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.LOG_ACTIVE_GENERATION = true;
+    ENV.APP.LOG_TRANSITIONS = true;
+    ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
   if (environment === 'test') {
