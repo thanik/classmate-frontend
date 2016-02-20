@@ -3,6 +3,12 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 
 export default Ember.Route.extend(ApplicationRouteMixin).extend(
 {
+  fb: Ember.inject.service(),
+
+  beforeModel() {
+    return this.get('fb').FBInit();
+  },
+
   actions: {
     showModal: function(name, model) {
       this.render(name, {

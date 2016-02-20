@@ -11,6 +11,7 @@ export default Ember.Route.extend({
   afterModel: function(posts)
   {
     const route = this;
+
     this.get('session').authorize('authorizer:token', (headerName, headerValue) =>
     {
       const headers = {};
@@ -25,13 +26,16 @@ export default Ember.Route.extend({
         if(response.status === 'success')
         {
           route.controller.set('latest_discussionpost_title',response.title);
-          route.controller.set('latest_discussionpost_time',response.time);
+          route.controller.set('latest_discussionpost_time',moment(response.time).fromNow());
           route.controller.set('latest_discussionpost_name',response.name);
           route.controller.set('latest_discussionpost_user_pic',response.user_pic);
         }
         else
         {
-          route.controller.set('latest_discussionpost_title','No discussion');
+          route.controller.set('latest_discussionpost_title','');
+          route.controller.set('latest_discussionpost_time','');
+          route.controller.set('latest_discussionpost_name','');
+          route.controller.set('latest_discussionpost_user_pic','');
         }
       });
     });

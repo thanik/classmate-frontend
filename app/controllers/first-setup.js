@@ -1,8 +1,8 @@
 import Ember from 'ember';
-import FB from 'ember-cli-facebook-js-sdk/fb';
 import config from '../config/environment';
 
 export default Ember.Controller.extend({
+  fb: Ember.inject.service(),
   currentPage: '0',
   firstPage: Ember.computed.equal('currentPage','0'),
   studentPage: Ember.computed.equal('currentPage','1'),
@@ -18,7 +18,8 @@ export default Ember.Controller.extend({
     },
     registerStudent: function()
     {
-      var controller = this;
+      const controller = this;
+      const FB = this.get('fb');
       var register_data = controller.getProperties('name','organization_code','faculty_field','student_id','email');
       if(register_data.name === '' || register_data.faculty_field === '' || register_data.student_id === '' || register_data.email === '' || register_data.organization_code === undefined)
       {
@@ -76,7 +77,8 @@ export default Ember.Controller.extend({
 
     registerTeacher: function()
     {
-      var controller = this;
+      const controller = this;
+      const FB = this.get('fb');
       var register_data = controller.getProperties('name','organization_code','faculty_field','email');
       if(register_data.name === '' || register_data.faculty_field === '' || register_data.email === '')
       {

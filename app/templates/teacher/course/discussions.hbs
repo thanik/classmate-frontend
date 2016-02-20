@@ -5,9 +5,9 @@
     {{#each model.discussionposts as |discussionpost|}}
       {{#link-to "teacher.course.discussion" discussionpost}}
           <div class="col-xs-12 section-content">
-              <!--div class="post-avatar">
-                  <div class="avatar"></div>
-              </div-->
+              <div class="post-avatar">
+                  <img class="avatar" alt="avatar" src={{discussionpost.user.avatar_filename}}>
+              </div>
               <div class="post-content">
                 {{discussionpost.topic}}<br/>
                   <p>by {{discussionpost.user.name}}<br/>

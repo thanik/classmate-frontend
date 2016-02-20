@@ -1,9 +1,9 @@
 <div class="row content">
     <div class="col-xs-12 section-header">{{model.topic}}</div>
     <div class="col-xs-12 section-content">
-        <!--div class="post-avatar">
-            <div class="avatar"></div>
-        </div-->
+        <div class="post-avatar">
+            <img class="avatar" alt="avatar" src={{model.user.avatar_filename}}>
+        </div>
 
         <div class="post-content">
             <p>{{model.content}}</p>
@@ -16,9 +16,9 @@
   {{#if model.comments}}
     {{#each model.comments as |comment|}}
         <div class="col-xs-12 section-content">
-            <!--div class="post-avatar">
-                <div class="avatar"></div>
-            </div-->
+            <div class="post-avatar">
+                <img class="avatar" alt="avatar" src={{comment.user.avatar_filename}}>
+            </div>
 
             <div class="post-content">
                 <p>{{comment.content}}</p>

@@ -1,10 +1,10 @@
-import FB from 'ember-cli-facebook-js-sdk/fb';
+//import FB from 'ember-cli-facebook-js-sdk/fb';
 
 export function initialize(/* application */) {
   // application.inject('route', 'foo', 'service:foo');
 }
 
-export default {
+/*export default {
   name: 'fb',
   initialize: function()
   {
@@ -14,4 +14,4 @@ export default {
       xfbml: true
     });
   }
-};
+};*/

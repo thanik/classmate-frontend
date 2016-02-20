@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import FB from 'ember-cli-facebook-js-sdk/fb';
 import config from '../config/environment';
 
 function onLogin(controller,response)
@@ -33,10 +32,12 @@ function onLogin(controller,response)
 }
 
 export default Ember.Route.extend({
+  fb: Ember.inject.service(),
   session: Ember.inject.service('session'),
 
   actions: {
     didTransition: function () {
+      const FB = this.get('fb');
       /* these code will run after the login route loaded */
       if(this.get('session.isAuthenticated'))
       {
@@ -54,7 +55,7 @@ export default Ember.Route.extend({
           }
           else
           {
-            FB.login({scope: 'user_about_me, user_friends, email'}).then(function (response)
+            FB.login('public_profile,user_friends,email').then(function (response)
             {
               onLogin(controller, response);
             });

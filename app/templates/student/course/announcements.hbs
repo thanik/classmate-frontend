@@ -3,9 +3,9 @@
       {{#if model.announcements}}
         {{#each model.announcements as |announcement|}}
           <div class="col-xs-12 section-content">
-              <!--div class="post-avatar">
-                  <div class="avatar"></div>
-              </div-->
+              <div class="post-avatar">
+                  <img class="avatar" alt="avatar" src={{announcement.user.avatar_filename}}>
+              </div>
               <div class="post-content">
                 {{announcement.title}}<br/>
                   <p>{{announcement.content}}</p>

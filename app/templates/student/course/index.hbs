@@ -1,42 +1,64 @@
 <div class="row content">
     <div class="col-xs-12 section-header">Latest Class Announcement</div>
     <div class="col-xs-12 section-content">
-        <!--div class="post-avatar">
-            <div class="avatar"></div>
-        </div-->
+        {{#if latest_material_title}}
+        <div class="post-avatar">
+            <img class="avatar" src={{latest_announcement_user_pic}}>
+        </div>
 
         <div class="post-content">
           {{latest_announcement_title}}<br/>
-          {{#if latest_announcement_name}}
           {{latest_announcement_time}}<br/>
             by {{latest_announcement_name}}<br/>
 
             {{latest_announcement_content}}
-          {{/if}}
         </div>
+        {{else}}
+        <div class="post-content">
+            No announcement
+        </div>
+
+        {{/if}}
     </div>
 
     <div class="col-xs-12 section-header">Latest Material</div>
     <div class="col-xs-12 section-content">
-        <div class="post-content">
-      {{latest_material_title}}<br/>
       {{#if latest_material_name}}
+        <div class="post-avatar">
+            <img class="avatar" src={{latest_material_user_pic}}>
+        </div>
+
+        <div class="post-content">
+        {{latest_material_title}}<br/>
         {{latest_material_time}}<br/>
         by {{latest_material_name}}<br/>
+        </div>
+      {{else}}
+      <div class="post-content">
+          No material
+      </div>
+
       {{/if}}
-            </div>
 
     </div>
 
     <div class="col-xs-12 section-header">Latest active thread in discussions</div>
     <div class="col-xs-12 section-content">
+  {{#if latest_discussionpost_title}}
+        <div class="post-avatar">
+            <img class="avatar" src={{latest_discussionpost_user_pic}}>
+        </div>
+
         <div class="post-content">
       {{latest_discussionpost_title}}<br/>
-      {{#if latest_discussionpost_name}}
       {{latest_discussionpost_time}}<br/>
         by {{latest_discussionpost_name}}<br/>
-      {{/if}}
-            </div>
+        </div>
+  {{else}}
+  <div class="post-content">
+      No discussion post
+    </div>
+    {{/if}}
     </div>
 
 </div>

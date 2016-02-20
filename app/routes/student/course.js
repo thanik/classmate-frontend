@@ -8,9 +8,11 @@ export default Ember.Route.extend({
   },
 
 
+
   afterModel: function(posts)
   {
     const route = this;
+
     this.get('session').authorize('authorizer:token', (headerName, headerValue) =>
     {
       const headers = {};
@@ -25,13 +27,16 @@ export default Ember.Route.extend({
         if(response.status === 'success')
         {
           route.controller.set('latest_material_title',response.title);
-          route.controller.set('latest_material_time',response.time);
+          route.controller.set('latest_material_time',moment(response.time).fromNow());
           route.controller.set('latest_material_name',response.name);
           route.controller.set('latest_material_user_pic',response.user_pic);
         }
         else
         {
-          route.controller.set('latest_material_title','No material');
+          route.controller.set('latest_material_title','');
+          route.controller.set('latest_material_time','');
+          route.controller.set('latest_material_name','');
+          route.controller.set('latest_material_user_pic','');
         }
       });
 
@@ -45,13 +50,17 @@ export default Ember.Route.extend({
         {
           route.controller.set('latest_announcement_title',response.title);
           route.controller.set('latest_announcement_content',response.content);
-          route.controller.set('latest_announcement_time',response.time);
+          route.controller.set('latest_announcement_time',moment(response.time).fromNow());
           route.controller.set('latest_announcement_name',response.name);
           route.controller.set('latest_announcement_user_pic',response.user_pic);
         }
         else
         {
-          route.controller.set('latest_announcement_title','No announcement');
+          route.controller.set('latest_announcement_title','');
+          route.controller.set('latest_announcement_content','');
+          route.controller.set('latest_announcement_time','');
+          route.controller.set('latest_announcement_name','');
+          route.controller.set('latest_announcement_user_pic','');
         }
       });
 
@@ -64,13 +73,16 @@ export default Ember.Route.extend({
         if(response.status === 'success')
         {
           route.controller.set('latest_discussionpost_title',response.title);
-          route.controller.set('latest_discussionpost_time',response.time);
+          route.controller.set('latest_discussionpost_time',moment(response.time).fromNow());
           route.controller.set('latest_discussionpost_name',response.name);
           route.controller.set('latest_discussionpost_user_pic',response.user_pic);
         }
         else
         {
-          route.controller.set('latest_discussionpost_title','No discussion');
+          route.controller.set('latest_discussionpost_title','');
+          route.controller.set('latest_discussionpost_time','');
+          route.controller.set('latest_discussionpost_name','');
+          route.controller.set('latest_discussionpost_user_pic','');
         }
       });
     });

@@ -18,7 +18,16 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+
+    FB: {
+    appId: '463605780481509',
+    version: 'v2.5',
+    xfbml: true
+    },
+
   };
+
+
 
   ENV['ember-simple-auth'] = {
     authenticationRoute: 'login',

@@ -19,8 +19,10 @@ export default Ember.Route.extend({
 
     course_new: function ()
     {
+      const route = this;
       if (this.controller.get('course_code') || this.controller.get('name'))
       {
+        Ember.$('#submit_button').prop("disabled", true);
         var new_course = this.store.createRecord('course', {
           course_code: this.controller.get('course_code'),
           name: this.controller.get('name'),
@@ -29,7 +31,7 @@ export default Ember.Route.extend({
         new_course.save().then(function()
         {
           Ember.$('#add-course').modal('hide');
-          window.location.reload(true);
+          route.refresh();
         });
 
 

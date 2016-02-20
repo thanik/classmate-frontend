@@ -14,13 +14,21 @@
 
     <div class="col-xs-12 section-header">Latest active thread in discussions</div>
     <div class="col-xs-12 section-content">
-        <div class="post-content">
-          {{latest_discussionpost_title}}<br/>
-          {{#if latest_discussionpost_name}}
+      {{#if latest_discussionpost_title}}
+          <div class="post-avatar">
+              <img class="avatar" src={{latest_discussionpost_user_pic}}>
+          </div>
+
+          <div class="post-content">
+            {{latest_discussionpost_title}}<br/>
             {{latest_discussionpost_time}}<br/>
               by {{latest_discussionpost_name}}<br/>
-          {{/if}}
-        </div>
+          </div>
+      {{else}}
+          <div class="post-content">
+              No discussion post
+          </div>
+      {{/if}}
     </div>
 
 </div>

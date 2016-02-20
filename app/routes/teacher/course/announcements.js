@@ -10,11 +10,12 @@ export default Ember.Route.extend({
 
     showAddModal: function()
     {
+      const route = this;
       Ember.$('#add-announcement').modal();
       Ember.$('.modal').on('hidden.bs.modal', function ()
       {
         Ember.$('.modal').find('form')[0].reset();
-        this.controller.set('modal_error', '');
+        route.controller.set('modal_error', '');
       });
     },
 
